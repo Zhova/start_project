@@ -1,2 +1,6 @@
 mixin header
-	+b.HEADER
+	+b.HEADER.header
+		+b.header__inner.indent
+			+e.logo
+				img.image(src="img/Logo.png", alt="logo")
+			+e.BUTTON.registration hello
