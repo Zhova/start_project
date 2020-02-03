@@ -1,7 +1,56 @@
+// gradients
+
+
+$color1: #82B032
+$color2: #44B032
+$color3: #1F8B0D
+$btn_oportumties: 180deg
+$list_btn: $color1 0%, $color2 0.01%, $color3 100%
+@mixin gradient_btn($btn_oportumties, $list_btn)
+	background: -webkit-linear-gradient($btn_oportumties, $list_btn)
+	background: -moz-linear-gradient($btn_oportumties, $list_btn)
+	background: -o-linear-gradient($btn_oportumties, $list_btn)
+	background: linear-gradient($btn_oportumties, $list_btn)
+
+
+$color4: #0D6FBB
+$color5: #0D6FBB
+$color6: #012540
+$item_oportumties: 180deg
+$list_item: $color4 0%, $color5 0.01%, $color6 100%
+@mixin gradient_item($item_oportumties, $list_item)
+	background: -webkit-linear-gradient($item_oportumties, $list_item)
+	background: -moz-linear-gradient($item_oportumties, $list_item)
+	background: -o-linear-gradient($item_oportumties, $list_item)
+	background: linear-gradient($item_oportumties, $list_item)
+
+
+// style
+
+body 
+	overflow-x: hidden
 *, *:after, *:before
 	box-sizing: border-box
+	font-family: roboto
+
 .indent
 	margin: 0 285px
+
+p
+	color: #fff
+
+.btn-green
+	@include gradient_btn($btn_oportumties, $list_btn)
+	border-radius: 1px
+	color: #fff
+	border: 0
+
+.btn-default
+	width: 214px
+	height: 46px
+	font-size: 18px
+	text-transform: uppercase
+
 .header
 	height: 80px
 	width: 100%
@@ -15,11 +64,9 @@
 		justify-content: space-between
 
 	&__registration
-		background-color:  #82B032
-		border: 0
 		height: 30px
 		width: 150px
-		color: white
+		font-size: 14px
 
 .main
 	background-image: url('../img/Main screen_back.png')
@@ -33,5 +80,178 @@
 		align-items: center
 
 	&-content
-		color: #fff
+		width: 30%
 
+		&__title
+			font-size: 64px
+			margin: 0
+			margin-bottom: 30px
+			text-transform: uppercase
+			font-style: italic
+			font-weight: bold
+
+		&:after
+			width: 100px
+			height: 100px
+			content: ''
+			background-image: url(../img/ball.png)
+			position: absolute
+			top: 155px
+			background-size: 110px
+			left: 195px
+
+		&__btn-main
+			width: 240px
+			height: 52px
+			font-size: 24px
+			text-transform: uppercase
+
+
+.sub-title
+	margin-bottom: 50px
+
+	p
+		font-size: 36px
+		margin: 0
+		text-transform: uppercase
+		margin-bottom: 15px
+
+.player-block
+	background-image: url('../img/light_effect.png')
+	position: absolute
+	right: 520px
+	background-repeat: no-repeat
+	top: 40px
+
+	img
+		position: relative
+		top: 56px
+		left: 188px
+
+
+.second-block
+	background-image: url('../img/second-block_back.jpg')
+	background-repeat: no-repeat
+	width: 100%
+	margin-top: -2px
+	display: flex
+	flex-direction: column
+	align-items: center
+	padding-bottom: 60px
+
+	&__bonus
+		font-style: italic
+		font-weight: bold
+		font-size: 30px
+		padding-top: 40px
+		margin-top: 0
+		margin-bottom: 125px
+		margin-right: 650px
+		font-weight: 500
+
+	.instruction
+		width: 100%
+		display: flex
+		justify-content: center
+		margin-bottom: 60px
+		
+		&__inner
+			width: 70%
+			display: flex
+			justify-content: space-around
+
+		&__item
+			width: 25%
+			padding: 20px
+			display: flex
+			align-items: center
+			position: relative
+			z-index: 1
+
+			&:before
+				content: ''
+				position: absolute
+				top: 0 
+				right: 0 
+				bottom: 0 
+				left: 0
+				z-index: -1
+				background: #58a
+				transform: skew(-10deg)
+				@include  gradient_item($item_oportumties, $list_item)
+
+			.number
+				margin-right: 15px
+				color: green
+				font-size: 80px
+				margin-top: 0
+				margin-bottom: 0
+				font-weight: bold
+
+			.text
+				width: 80%
+
+				p
+					margin: 0
+
+				.title
+					margin-bottom: 5px
+					margin-top: 5px
+					font-size: 20px
+
+				.content
+					font-size: 12px
+					line-height: 16px
+					font-weight: 200
+
+
+.about
+	background-image: url('../img/about-back.jpg')
+	font-size: 10px
+	line-height: 14px
+	display: flex
+	align-items: center
+	flex-direction: column
+	padding-bottom: 60px
+
+	.title
+		margin-top: 90px
+		margin-right: 895px
+
+	&__text
+		width: 80%
+		display: flex
+		justify-content: center
+		margin-bottom: 20px
+
+		ul
+			color: #fff
+			width: 35%
+
+	hr
+		width: 60%
+		margin-bottom: 40px
+
+	mobile-logo
+		display: none
+
+	&__btn
+		margin-bottom: 40px
+
+.footer
+	background-image: url('../img/footer-back.jpg')
+	background-repeat: no-repeat
+	display: flex
+	align-items: center
+	justify-content: center
+	padding: 80px
+
+	&__inner
+		width: 60%
+		display: flex
+		justify-content: center
+		align-items: center
+		flex-wrap: wrap
+
+		img
+			margin: 5px 16px

@@ -36,6 +36,10 @@ const img = [
 './src/img/*'
 ];
 
+const fonts = [
+'./src/fonts/*'
+];
+
 
 function Html() {
 	return gulp.src('./src/*.pug')
@@ -97,6 +101,12 @@ function ImgMIn() {
 }
 
 
+function Fonts() {
+	return gulp.src(fonts)
+				.pipe(gulp.dest('./build/fonts'))
+				.pipe(browserSync.stream());
+}
+
 function Watch() {
 	 browserSync.init({
         server: {
@@ -107,6 +117,7 @@ function Watch() {
 	gulp.watch('./src/css/**/*.sass', Styles);
 	gulp.watch('./src/js/**/*.js', Script);
 	gulp.watch('./src/img/**', ImgMIn);
+	gulp.watch('./src/fonts/**', Fonts);
 }
 
 function Clean() {
@@ -120,9 +131,10 @@ gulp.task('Html', Html);
 gulp.task('Styles', Styles);
 gulp.task('Script', Script);
 gulp.task('Libs', Libs);
+gulp.task('Fonts', Fonts);
 gulp.task('Watch', Watch);
 
 gulp.task('build', gulp.series(Clean, 
-							gulp.parallel(Styles, Script, Html, Libs, ImgMIn))
+							gulp.parallel(Styles, Script, Html, Libs, ImgMIn, Fonts))
 						);
 gulp.task('dev', gulp.series('build', Watch));

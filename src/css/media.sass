@@ -2,7 +2,62 @@
 // // =============== large
 
 
+// =================laptop
+@media screen and (max-width: 1500px)
+	.indent
+		margin: 0 100px
 
+	.header
+		&__inner
+			width: 85%
+
+	.main
+		&-content
+			&:after
+				left: 5px
+				top: 70px
+			&__title
+				font-size: 40px
+			.sub-title
+				margin-bottom: 30px
+				p
+					font-size: 25px
+
+
+	.player-block
+		top: 103px
+		right: 252px
+		background-size: 430px
+		img
+			width: 400px
+			top: 10px
+			left: 100px
+	.second-block
+		padding-bottom: 50px
+
+	.second-block__bonus
+		margin-right: 915px
+		font-size: 25px
+		margin-bottom: 50px
+
+	.instruction__inner
+		width: 100%!important
+
+	.about
+		.title
+			margin-right: 980px
+
+		&__text
+			width: 100%
+
+			ul
+				width: 45%
+
+	.footer
+		padding: 50px 10px
+
+		&__inner
+			width: 95%
 
 // =============== tablet 
 // @media screen and (max-width: 1199px) and (min-width: 375px)
@@ -10,4 +65,120 @@
 
 
 // =============== mobile
-// @media screen and (max-width: 767px)
+@media screen and (max-width: 767px)
+
+	.indent
+		margin: 0 10px
+
+	.header
+		&__inner
+			width: 100%
+		&__logo
+			img
+				width: 140px
+
+
+	.main
+		background-position: center
+		height: 68vh
+
+		&-inner
+			align-items: flex-start
+		&-content
+			width: 100%
+			display: flex
+			flex-direction: column
+			align-items: center
+			text-align: center
+
+			&:after
+				right: 287px
+				top: 450px
+				width: 70px
+				height: 70px
+				background-size: 70px
+				left: auto
+
+			&__btn-main
+				z-index: 1
+				width: 200px
+
+			&__title
+				font-size: 37px
+				margin-top: 50px
+				margin-bottom: 15px
+
+			.sub-title
+				margin-bottom: 260px
+				p
+					font-size: 25px
+
+
+		&-inner
+			justify-content: center
+
+	.player-block
+		background-size: 420px
+		right: 0
+		top: 285px
+
+		img
+			width: 400px
+			left: 85px
+			top: 0
+
+
+	.second-block
+		background-image: url('../img/second-back_mobile.jpg')
+		background-position-x: center
+		background-size: 100%
+
+		&__bonus
+			font-size: 30px
+			margin-right: 0
+			margin-bottom: 50px
+			margin-top: 30px
+
+
+		.instruction
+			margin-bottom: 0
+			&__inner
+				flex-direction: column
+				width: 100%
+				display: flex
+				align-items: center
+
+
+			&__item
+				width: 90%
+				margin-bottom: 25px
+
+				&:before
+					transform: skew(0deg)
+	
+	.about
+		background-image: url('../img/about-back_mobile.jpg')
+
+		.title
+			margin-right: 200px
+			margin-top: 20px
+		&__text
+			width: 100%
+			display: block
+
+			ul
+				width: 97%
+
+		hr
+			width: 100%
+			margin-bottom: 40px
+
+	.footer
+		background-position-x: center
+		padding: 0
+
+		&__inner
+			width: auto
+
+			img
+				width: 85px
